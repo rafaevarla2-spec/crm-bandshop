@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+import openpyxl
 # Configuração visual
 st.set_page_config(page_title="CRM Moderno - Band", layout="wide")
 
@@ -10,7 +10,7 @@ st.title("📊 CRM de Prospecção & Vendas")
 # Tenta carregar o arquivo real. Se não existir, usa dados de exemplo.
 try:
     # Ajuste o nome do arquivo abaixo se você subir o Excel para o GitHub
-    df = pd.read_csv("dados_crm.csv") 
+    df = pd.read_excel("CRM - Prospecção - nova base (2).xlsx", sheet_name="CRM")
     st.sidebar.success("✅ Dados reais carregados!")
 except:
     st.sidebar.warning("⚠️ Usando dados de demonstração. Suba seu CSV no GitHub para atualizar.")
